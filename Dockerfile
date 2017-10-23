@@ -9,17 +9,17 @@ RUN apt-get install -y \
     vim
 
 RUN apt-get install -y \
-    python \
-    python-dev \
-    python-pip \
+    python3 \
+    python3-dev \
+    python3-pip \
     python-numpy \
     python-matplotlib \
     python-rpi.gpio
 
-ADD tensorflow-1.3.0-cp27-none-linux_armv7l.whl .
+ADD tensorflow-1.3.0-cp35-cp35m-linux_armv7l.whl .
 
-RUN pip --no-cache-dir install tensorflow-1.3.0-cp27-none-linux_armv7l.whl && \
-    rm -f tensorflow-1.3.0-cp27-none-linux_armv7l.whl
+RUN pip3 --no-cache-dir install tensorflow-1.3.0-cp35-cp35m-linux_armv7l.whl && \
+    rm -f tensorflow-1.3.0-cp35-cp35m-linux_armv7l.whl
 
 # TensorBoard
 EXPOSE 6006
